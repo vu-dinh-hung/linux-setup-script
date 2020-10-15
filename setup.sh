@@ -15,18 +15,22 @@ fi
 echo $'\n--------------------------------\n'
 echo "Install essential apps? (y/n): "; read answer
 if [ "$answer" == "y" ]; then
-  echo "Adding universe and multiverse repositories..."
-  sudo add-apt-repository universe
-  sudo add-apt-repository multiverse
-  sudo apt update
-  sudo apt install virtualenv git htop vlc ttf-mscorefonts-installer g++
+  if [ -x "$(command -v apt)" ]; then
+    ./tools/install_essentials_apt.sh
+  elif [ -x "$(command -v dnf)" ]; then
+    ./tools/install_essentials_dnf.sh
+  elif [ -x "$(command -v yum)" ]; then
+    ./tools/install_essentials_yum.sh
+  elif [ -x "$(command -v pacman)" ]; then
+    echo "This part not developed. Coming soon..."
+  fi
 else
   echo "Skipping install essentials..."
 fi
 
 # Install logid
 echo $'\n--------------------------------\n'
-echo "Install logid? (y/n): "; read answer
+echo "Install logid (Logitech Options for Linux by PixlOne)? (y/n): "; read answer
 if [ "$answer" == "y" ]; then
   cd tools
   ./install_logid.sh

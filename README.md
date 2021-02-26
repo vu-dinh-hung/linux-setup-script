@@ -1,12 +1,9 @@
-# Personal Setup Script
+# Linux Setup Script
 
-This is a collection of utilities to quickly set up a Linux (desktop) installation.
+This is a collection of quick scripts to set up a Linux desktop installation, mostly for myself so I can distro hop without spending hours tweaking settings.
 
 ## Usage
 
 ```bash
 ./setup.sh
 ```
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)

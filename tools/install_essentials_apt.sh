@@ -7,4 +7,4 @@ sudo apt update
 echo "Updating installed apps..."
 sudo apt upgrade
 echo "Installing essentials..."
-sudo apt install virtualenv git htop vlc ttf-mscorefonts-installer g++
+sudo apt install virtualenv git htop vlc ttf-mscorefonts-installer g++ autokey-gtk

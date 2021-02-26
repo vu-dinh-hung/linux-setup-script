@@ -25,7 +25,17 @@ if [ "$answer" == "y" ]; then
     echo "This part not developed. Coming soon..."
   fi
 else
-  echo "Skipping install essentials..."
+  echo "Skipping essentials installation..."
+fi
+
+# Set up AutoKey shortcuts
+echo $'\n--------------------------------\n'
+echo "Configure AutoKey? (y/n): "; read answer
+if [ "$answer" == "y" ]; then
+  sudo cp -a ./tools/autokey_files/. $HOME/.config/autokey/data/Sample\ Scripts
+  autokey
+else
+  echo "Skipping AutoKey configuration..."
 fi
 
 # Install logid
